@@ -43,7 +43,7 @@ int main(int argc, char **argv[]) {
 
   printf("(Quick) Sorted by win percentage, increasing: \n");
   // TODO: call qsort using your comparator function here
-  qsort(teams, 16, sizeof(Team), teamComparisonByWinPercentage);
+  qsort(teams, 16, sizeof(Team), teamComparisonByWinPercentage2);
   printAllTeams(teams, NUM_TEAMS);
 
   /* search, find */
