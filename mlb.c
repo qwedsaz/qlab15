@@ -131,7 +131,6 @@ void selectionSortTeams(Team *teams, int size,
         Team temp = teams[j];
         teams[j] = teams[j + 1];
         teams[j + 1] = temp;
-        printf("4\n");
       }
     }
   }
