@@ -180,10 +180,9 @@ int teamComparisonByWinPercentage(const void *s1, const void *s2) {
 //      Teams by payroll in descending order; be sure to
 //      add your function prototype to the mlb.h header file!
 int teamComparisonByPayroll(const void* s1, const void* s2) {
-  printf("1\n");
-  const Team* t1 = (const Team*)s1;
-  const Team* t2 = (const Team*)s2;
-  printf("3\n");
+  Team* t1 = (const Team*)s1;
+  Team* t2 = (const Team*)s2;
+  
   if (t1->payroll < t2->payroll) {
     return 1;
   }
