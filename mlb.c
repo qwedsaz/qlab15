@@ -122,6 +122,19 @@ void selectionSortTeamsByPayroll(Team *teams, int size) {
 void selectionSortTeams(Team *teams, int size,
                         int (*compar)(const void *, const void *)) {
   // TODO: implement this function
+  int i;
+  for (i = 0; i < size - 1; i++) {
+    int j;
+    for (j = 0; j < size - 1; j++) {
+      //Swap if adjacent teams is larger
+      if (compar(&teams[j], &teams[j + 1]) > 0) {
+        Team temp = teams[j];
+        teams[j] = teams[j + 1];
+        teams[j + 1] = temp;
+      }
+    }
+  }
+  return;
 }
 
 int teamComparisonByName(const void *s1, const void *s2) {
@@ -165,3 +178,17 @@ int teamComparisonByWinPercentage(const void *s1, const void *s2) {
 // TODO: implement your own comprator function to order
 //      Teams by payroll in descending order; be sure to
 //      add your function prototype to the mlb.h header file!
+int teamComparisonByPayroll(const void* s1, const void* s2) {
+  const Team* t1 = (const Team*)s1;
+  const Team* t2 = (const Team*)s2;
+  
+  if (t1->payroll < t2->payroll) {
+    return 1;
+  }
+  else if (t1->payroll == t2->payroll) {
+    return 0;
+  }
+  else {
+    return -1;
+  }
+}
