@@ -76,3 +76,8 @@ int teamComparisonByStateCity(const void *s1, const void *s2);
  * A comparator that orders Teams by payroll in descending order
  */
 int teamComparisonByPayroll(const void* s1, const void* s2);
+
+/**
+ * A comparator that orders Teams by win percentage (lowest first)
+ */
+int teamComparisonByWinPercentage2(const void *s1, const void *s2);
