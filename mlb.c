@@ -125,10 +125,8 @@ void selectionSortTeams(Team *teams, int size,
   int i;
   for (i = 0; i < size - 1; i++) {
     int j;
-    printf("1\n");
     for (j = 0; j < size - 1; j++) {
       //Swap if adjacent teams is larger
-      printf("2\n");
       if (compar(&teams[j], &teams[j + 1]) > 0) {
         Team temp = teams[j];
         teams[j] = teams[j + 1];
@@ -182,6 +180,7 @@ int teamComparisonByWinPercentage(const void *s1, const void *s2) {
 //      Teams by payroll in descending order; be sure to
 //      add your function prototype to the mlb.h header file!
 int teamComparisonByPayroll(const void* s1, const void* s2) {
+  printf("1\n");
   const Team* t1 = (const Team*)s1;
   const Team* t2 = (const Team*)s2;
   printf("3\n");
