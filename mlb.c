@@ -106,6 +106,7 @@ void selectionSortTeamsByPayroll(Team *teams, int size) {
     int smallestPayroll = teams[i].payroll;
     int teamNum = i;  //Set the smallest payroll team as default
     int j;
+    printf("%s: %d\n", teams[i].name, smallestPayroll);
     for (j = i; j < size; j++ ) {
       if (smallestPayroll > teams[i].payroll) {
         smallestPayroll = teams[i].payroll;
