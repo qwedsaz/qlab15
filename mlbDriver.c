@@ -72,7 +72,12 @@ int main(int argc, char **argv[]) {
   printTeam(caTeam);
 
   // TODO: Finish Activity 4 here
+  caKey = createTeam("Cubs", 0, 0, "", "", 0, 0);
+  
+  qsort(teams, 16, sizeof(Team), teamComparisonByName);
+  caTeam = bsearch(caKey, teams, NUM_TEAMS, sizeof(Team), teamComparisonByName);
   printf("Search result for Cubs (via name): \n");
+  printTeam(caTeam);
 
   return 0;
 }
