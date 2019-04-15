@@ -101,6 +101,22 @@ void bubbleSortTeams(Team *teams, int size,
 
 void selectionSortTeamsByPayroll(Team *teams, int size) {
   // TODO: implement this function
+  int i;
+  for (i = 0; i < size; i++) {
+    int smallestPayroll = teams[i]->payroll;
+    int teamNum = i;  //Set the smallest payroll team as default
+    int j;
+    for (j = i; j < size; j++ ) {
+      if (smallestPayroll > teams[i]->payroll) {
+        smallestPayroll = teams[i]->payroll;
+        teamNum = j;
+      }
+    }
+    Team temp = teams[i];
+    teams[i] = teams[teamNum];
+    teams[teamNum] = temp;
+  }
+  return;
 }
 
 void selectionSortTeams(Team *teams, int size,
